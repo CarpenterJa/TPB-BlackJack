@@ -5,6 +5,7 @@ public class GameMechanics {
 	static String name;
 	static Scanner user = new Scanner(System.in);
 	static int counter=0;
+	static boolean keepPlaying=true;
 
 	public static void StartGame() {
 		
@@ -67,6 +68,18 @@ public class GameMechanics {
 			}
 		}
 		System.out.println("You finished with a total of " + userTotal);
+		System.out.println("Would you like to continue playing 1) Yes 2) No?");
+		int choice=user.nextInt(); 
+		if(choice==1)
+		{
+			
+		}     
+		else
+		{
+			System.out.println("insert saying here");
+			keepPlaying=false;
+		}
+		
 	}
 
 }
