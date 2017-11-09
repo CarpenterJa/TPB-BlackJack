@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class GameMechanics {
-
+	
 	static String name;
 	static Scanner user = new Scanner(System.in);
 	static int counter=0;
@@ -12,17 +12,17 @@ public class GameMechanics {
 		System.out.println("What is your name?");
 		name = user.next();
 		if (name.equalsIgnoreCase("saunders")) {
-			System.out.println("Frig off Saunders");
+			System.out.println("Frig off Saunders.");
 			System.exit(0);
 		} else if (name.equalsIgnoreCase("will")) {
-			System.out.println("Frig off Will");
+			System.out.println("Frig off Will.");
 			System.exit(0);
 		}
 		else if (name.equalsIgnoreCase("jimmy")) {
-			System.out.println("Greasy");
+			System.out.println("Greasy.");
 		}
 		else if (name.equalsIgnoreCase("sean")) {
-			System.out.println("Greasy");
+			System.out.println("Greasy.");
 		}
 		else
 		{
