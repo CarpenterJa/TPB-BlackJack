@@ -7,8 +7,10 @@ public class Dealer {
 	{
 		System.out.println("The dealers second card is the " + Deck.deck.get(GameMechanics.dealerFirstCard).getName());
 		dealerTotal+=Deck.deck.get(GameMechanics.dealerFirstCard).getValue() + Deck.deck.get(GameMechanics.dealerSecondCard).getValue();
+		System.out.println("The dealer is delt a total of " + dealerTotal);
 		while(dealerTotal<17)
 		{
+			
 			System.out.println("The dealer hits and gets the " + Deck.deck.get(GameMechanics.counter).getName());
 			dealerTotal+=Deck.deck.get(GameMechanics.counter).getValue();
 			if(dealerTotal>21)
