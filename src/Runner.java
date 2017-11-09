@@ -5,7 +5,10 @@ public class Runner {
 		Deck.addDeck();
 		Deck.Shuffle();
 		GameMechanics.StartGame();
+		while(GameMechanics.keepPlaying==true)
+		{
 		GameMechanics.PlayBlackJack();
+		}
 
 	}
 
