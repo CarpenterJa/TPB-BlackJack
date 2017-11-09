@@ -4,8 +4,10 @@ public class GameMechanics {
 	
 	static String name;
 	static Scanner user = new Scanner(System.in);
-	static int counter=0;
+	static int counter=1;
 	static boolean keepPlaying=true;
+	static int dealerFirstCard;
+	static int dealerSecondCard;
 
 	public static void StartGame() {
 		
@@ -34,9 +36,16 @@ public class GameMechanics {
 	public static void PlayBlackJack()
 	{
 		int userTotal=0;
-		System.out.println("You are delt a " + Deck.deck.get(counter).getName() + " and a " + Deck.deck.get(counter+1).getName());
+		System.out.println("The dealer burns the first card of the deck.");
+		System.out.println("You are delt the " + Deck.deck.get(counter).getName() + " and the " + Deck.deck.get(counter+1).getName());
 		userTotal=Deck.deck.get(counter).getValue() + Deck.deck.get(counter+1).getValue();
 		counter=counter+2;
+		dealerFirstCard=counter;
+		counter++;
+		dealerSecondCard=counter;
+		System.out.println("The dealer is showing the " + Deck.deck.get(counter).getName());
+	
+		
 		System.out.println(name + " your total is " + userTotal);
 		while(userTotal<21)
 		{
@@ -45,7 +54,7 @@ public class GameMechanics {
 			if(choice==1)
 			{
 				userTotal=userTotal + Deck.deck.get(counter).getValue();
-				if(userTotal<21)
+				if(userTotal<=21)
 				{
 				System.out.println("You get a " +  Deck.deck.get(counter).getName());
 				System.out.println(name + " your new total is " + userTotal);
@@ -68,6 +77,7 @@ public class GameMechanics {
 			}
 		}
 		System.out.println("You finished with a total of " + userTotal);
+		Dealer.deal();
 		System.out.println("Would you like to continue playing 1) Yes 2) No?");
 		int choice=user.nextInt(); 
 		if(choice==1)
