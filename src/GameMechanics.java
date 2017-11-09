@@ -5,9 +5,13 @@ public class GameMechanics {
 	static String name;
 	static Scanner user = new Scanner(System.in);
 	static int counter=1;
+	static int whtotal=1;
 	static boolean keepPlaying=true;
 	static int dealerFirstCard;
 	static int dealerSecondCard;
+	static int money;
+	static int bet;
+	
 
 	public static void StartGame() {
 		
@@ -31,11 +35,29 @@ public class GameMechanics {
 		{
 			System.out.println("Welcome to SunnyVale Trailer Park " + name);
 		}
+		System.out.println("How much money are you starting with?");
+		money=user.nextInt();
 	
 	}
 	public static void PlayBlackJack()
 	{
 		int userTotal=0;
+		int whCount=0;
+		System.out.println("How much are you willing to zing?");
+		bet=user.nextInt();
+		if (bet > money )
+		{
+			System.out.println("You can't zing that much.");
+		}
+		else if (bet == money)
+		{
+			System.out.println("You're fucking tweaking.");
+		}
+		else 
+		{
+			money-=bet;
+		System.out.println("You bet " + bet + " dollars and your total money now is " + money);	
+		}
 		System.out.println("The dealer burns the first card of the deck.");
 		System.out.println("You are delt the " + Deck.deck.get(counter).getName() + " and the " + Deck.deck.get(counter+1).getName());
 		userTotal=Deck.deck.get(counter).getValue() + Deck.deck.get(counter+1).getValue();
@@ -45,6 +67,8 @@ public class GameMechanics {
 		dealerSecondCard=counter;
 		System.out.println("The dealer is showing the " + Deck.deck.get(counter).getName());
 	
+		//this shit is twack not sure how to form it yet
+		whCount=Deck.deck.get(whtotal).getWHvalue() + Deck.deck.get(whtotal+1).getWHvalue();
 		
 		System.out.println(name + " your total is " + userTotal);
 		while(userTotal<21)
