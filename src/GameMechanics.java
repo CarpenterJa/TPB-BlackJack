@@ -68,6 +68,7 @@ public class GameMechanics {
 		System.out.println("The dealer is showing the " + Deck.deck.get(counter).getName());
 	
 		//this shit is twack not sure how to form it yet
+		//fuk you sean
 		whCount=Deck.deck.get(whtotal).getWHvalue() + Deck.deck.get(whtotal+1).getWHvalue();
 		
 		System.out.println(name + " your total is " + userTotal);
