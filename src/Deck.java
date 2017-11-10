@@ -4,12 +4,12 @@ import java.util.Collections;
 public class Deck {
 	protected String name;
 	protected int value;
-	protected int WHvalue;
+	protected double WHvalue;
 
-	public Deck(String n, int v, int w) {
+	public Deck(String n, int v, double w) {
 		name = n;
 		value = v;
-		WHvalue = w; //aidsy
+		WHvalue = w; 
 		
 	}
 
@@ -29,7 +29,7 @@ public class Deck {
 		this.value = value;
 	}
 
-	public int getWHvalue() {
+	public double getWHvalue() {
 		return WHvalue;
 	}
 	

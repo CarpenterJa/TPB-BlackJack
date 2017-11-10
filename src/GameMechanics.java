@@ -5,7 +5,7 @@ public class GameMechanics {
 	static String name;
 	static Scanner user = new Scanner(System.in);
 	static int counter=1;
-	static int whtotal=1;
+	static double whtotal=0;
 	static boolean keepPlaying=true;
 	static int dealerFirstCard;
 	static int dealerSecondCard;
@@ -42,7 +42,6 @@ public class GameMechanics {
 	public static void PlayBlackJack()
 	{
 		int userTotal=0;
-		int whCount=0; //s
 		System.out.println("How much are you willing to zing?");
 		bet=user.nextInt();
 		if (bet > money )
@@ -61,15 +60,16 @@ public class GameMechanics {
 		System.out.println("The dealer burns the first card of the deck.");
 		System.out.println("You are delt the " + Deck.deck.get(counter).getName() + " and the " + Deck.deck.get(counter+1).getName());
 		userTotal=Deck.deck.get(counter).getValue() + Deck.deck.get(counter+1).getValue();
+		whtotal=Deck.deck.get(counter).getWHvalue() + Deck.deck.get(counter+1).getWHvalue();
+		System.out.println(GameMechanics.whtotal);
 		counter=counter+2;
 		dealerFirstCard=counter;
 		counter++;
 		dealerSecondCard=counter;
 		System.out.println("The dealer is showing the " + Deck.deck.get(counter).getName());
 	
-		//this shit is twack not sure how to form it yet
-		//fuk you sean aids
-		whCount=Deck.deck.get(whtotal).getWHvalue() + Deck.deck.get(whtotal+1).getWHvalue();
+		
+		
 		
 		System.out.println(name + " your total is " + userTotal);
 		while(userTotal<21)
@@ -79,14 +79,18 @@ public class GameMechanics {
 			if(choice==1)
 			{
 				userTotal=userTotal + Deck.deck.get(counter).getValue();
+				whtotal+=Deck.deck.get(counter).getWHvalue();
+				System.out.println(GameMechanics.whtotal);
 				if(userTotal<=21)
 				{
-				System.out.println("You get a " +  Deck.deck.get(counter).getName());
+				System.out.println("You get the " +  Deck.deck.get(counter).getName());
 				System.out.println(name + " your new total is " + userTotal);
 				
 				}
 				else
 				{
+					System.out.println("You get the " +  Deck.deck.get(counter).getName());
+					System.out.println(name + " your new total is " + userTotal);
 					System.out.println("You busted! Polmegranite Cocks");
 				}
 				counter++;
