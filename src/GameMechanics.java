@@ -21,7 +21,8 @@ public class GameMechanics {
 		if (name.equalsIgnoreCase("saunders")) {
 			System.out.println("Frig off Saunders.");
 			System.exit(0);
-		} else if (name.equalsIgnoreCase("will")) {
+		} 
+		else if (name.equalsIgnoreCase("will")) {
 			System.out.println("Frig off Will.");
 			System.exit(0);
 		}
@@ -115,7 +116,7 @@ public class GameMechanics {
 		}     
 		else
 		{
-			System.out.println("insert saying here");
+			System.out.println("Jim Lahey is a fucking drunk and he always will be");
 			keepPlaying=false;
 		}
 		
