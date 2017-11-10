@@ -9,7 +9,7 @@ public class Deck {
 	public Deck(String n, int v, int w) {
 		name = n;
 		value = v;
-		WHvalue = w; //aids
+		WHvalue = w; //aidsy
 		
 	}
 

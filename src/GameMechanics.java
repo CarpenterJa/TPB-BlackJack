@@ -42,7 +42,7 @@ public class GameMechanics {
 	public static void PlayBlackJack()
 	{
 		int userTotal=0;
-		int whCount=0;
+		int whCount=0; //s
 		System.out.println("How much are you willing to zing?");
 		bet=user.nextInt();
 		if (bet > money )
